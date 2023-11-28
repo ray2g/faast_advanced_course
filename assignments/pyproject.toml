@@ -3,7 +3,7 @@ name = "life_expectancy"
 version = "0.1.0"
 description = "First assignment of the Foundations Learning Path"
 authors = [{name = "João Raimundo", email ="joao.raimundo@nos.pt"}]
-dependencies = ["requests", "numpy==1.19.2", "pandas"]
+dependencies = ["pandas"]
 
 readme = "README.md"
 requires-python = ">=3.8"
