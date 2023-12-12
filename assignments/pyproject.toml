@@ -3,7 +3,7 @@ name = "life_expectancy"
 version = "0.1.0"
 description = "First assignment of the Foundations Learning Path"
 authors = [{name = "João Raimundo", email ="joao.raimundo@nos.pt"}]
-dependencies = ["pandas"]
+dependencies = ["argparse", "pandas", "numpy"]
 
 readme = "README.md"
 requires-python = ">=3.8"
@@ -25,3 +25,11 @@ fail_under = 80
 
 [tool.setuptools]
 packages = ["life_expectancy"]
+
+
+[tool.pylint."messages control"]
+disable = [
+   "missing-module-docstring",
+   "anomalous-backslash-in-string",
+   "trailing-whitespace"
+]
