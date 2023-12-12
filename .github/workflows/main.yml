@@ -32,7 +32,7 @@ jobs:
         
     - name: Test with pytest
       run: |
-        cd assignments/life_expectancy/
+        pwd
         pytest life_expectancy --cov
 
     - name: Lint with pylint
