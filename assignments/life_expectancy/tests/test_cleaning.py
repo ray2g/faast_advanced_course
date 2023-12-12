@@ -1,4 +1,5 @@
 """Tests for the cleaning module"""
+from pathlib import Path
 import pandas as pd
 
 from life_expectancy.cleaning import clean_data
@@ -7,11 +8,11 @@ from . import OUTPUT_DIR
 
 def test_clean_data(pt_life_expectancy_expected):
     """Run the `clean_data` function and compare the output to the expected output"""
+
+    input_path: Path = OUTPUT_DIR / "eu_life_expectancy_raw.tsv"
+    output_path: Path = OUTPUT_DIR / "pt_life_expectancy.csv"
     
-    input_path = "/nfs/backup/wb_mci_fraude/jpraimundo/faast_advanced_course/assignments/life_expectancy/data/eu_life_expectancy_raw.tsv"
-    output_path = "/nfs/backup/wb_mci_fraude/jpraimundo/faast_advanced_course/assignments/life_expectancy/data/pt_life_expectancy.csv"
-    
-    clean_data(input_path, output_path)
+    clean_data(input_path, output_path, "PT")
     pt_life_expectancy_actual = pd.read_csv(
         OUTPUT_DIR / "pt_life_expectancy.csv"
     )
