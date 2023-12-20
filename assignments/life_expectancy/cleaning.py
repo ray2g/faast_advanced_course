@@ -111,7 +111,7 @@ def save_data(df: DataFrame, output_path: Union[str, Path]) -> None:
     print(f"Process Finished! The file was saved as csv in:\n{output_path}\n")
 
 
-def main():
+def main(): # pragma: no cover
     """
     Main function which config the arparse and
     calls the functions to load, clean and save the tsv file.
@@ -130,6 +130,7 @@ def main():
                   filtering the dataframe by region.
     - save_data: Function which saves a dataframe as csv.
     """
+    
     # config argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', help= "Input file path.") 
@@ -145,10 +146,8 @@ def main():
 
     # read tsv file
     data = load_data(args.i)
-
     # clean tsv file
     df = clean_data(data, args.r)
-
     # save dataframe as csv
     save_data(df, args.o)
 
