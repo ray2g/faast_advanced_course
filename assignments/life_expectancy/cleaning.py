@@ -137,6 +137,12 @@ def main():
     parser.add_argument("-r", default="PT", help = "Desire region to filter the csv.")
     args = parser.parse_args()
 
+    # Check if all required arguments are provided
+    required_args = ["-i", "-o"]
+    for arg in required_args:
+        if arg not in args:
+            raise Exception(f"Missing argument: '{arg}'")
+
     # read tsv file
     data = load_data(args.i)
 
