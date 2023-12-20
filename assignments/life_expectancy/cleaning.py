@@ -2,14 +2,17 @@
 
 # import libraries
 import io
-from io import TextIOWrapper
 import csv
-from pathlib import Path
-from typing import Union
 import argparse
 import pandas as pd
-from pandas import DataFrame
 import numpy as np
+
+from io import TextIOWrapper
+from pandas import DataFrame
+from pathlib import Path
+from typing import Union
+
+
 
 
 def load_data(input_path: Union[str, Path]) -> TextIOWrapper:
