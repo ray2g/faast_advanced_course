@@ -115,6 +115,20 @@ def main():
     """
     Main function which config the arparse and
     calls the functions to load, clean and save the tsv file.
+
+    Functions description:
+    - load_data: Function wich loads the tsv file.
+    - clean_data: Function which cleans a data object by:
+                  replacing "," with '\t',
+                  replacing ":" with NaN values,
+                  renaming column "geo\time" for "region",
+                  transforms the tsv to dataframe,
+                  unpivot the dataframe,
+                  removing characters from value column,
+                  converting columns to the respetive type,
+                  dropping the null values,
+                  filtering the dataframe by region.
+    - save_data: Function which saves a dataframe as csv.
     """
     # config argparse
     parser = argparse.ArgumentParser()
