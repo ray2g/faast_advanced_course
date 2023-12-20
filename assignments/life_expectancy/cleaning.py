@@ -1,17 +1,16 @@
 # Script to clean data/life_expectancy_raw.tsv ___//
 
 # import libraries
-import io
-import csv
-import argparse
-import pandas as pd
-import numpy as np
-
 from io import TextIOWrapper
 from pandas import DataFrame
 from pathlib import Path
 from typing import Union
 
+import io
+import csv
+import argparse
+import pandas as pd
+import numpy as np
 
 
 
