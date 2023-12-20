@@ -1,16 +1,19 @@
 # Script to clean data/life_expectancy_raw.tsv ___//
 
 # import libraries
-from io import TextIOWrapper
-from pandas import DataFrame
-from pathlib import Path
-from typing import Union
-
 import io
 import csv
 import argparse
-import pandas as pd
+
+from io import TextIOWrapper
+from pathlib import Path
+from typing import Union
+from pandas import DataFrame
+
 import numpy as np
+import pandas as pd
+
+
 
 
 
@@ -138,10 +141,10 @@ def main(): # pragma: no cover
     args = parser.parse_args()
 
     # Check if all required arguments are provided
-    required_args = ["-i", "-o"]
+    required_args = ["i", "o"]
     for arg in required_args:
         if arg not in args:
-            raise Exception(f"Missing argument: '{arg}'")
+            raise ValueError(f"Missing argument: '{arg}'")
 
     # read tsv file
     data = load_data(args.i)
