@@ -25,8 +25,8 @@ def clean_data(input_path: Union[str, Path], output_path: Union[str, Path], regi
     - filter dataframe by region
     - convert dataframe to csv
     '''
-
-    print("\nCleaning tsv file...\n")
+    
+    print("Cleaning tsv file...\n")
 
     # open and read raw data file
     with open(input_path, 'r', encoding="utf8") as raw_data:
