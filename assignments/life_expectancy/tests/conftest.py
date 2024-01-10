@@ -1,4 +1,4 @@
-"""Pytest configuration file"""
+"""Pytest configuration file - Fixture Definition"""
 
 import pandas as pd
 import pytest

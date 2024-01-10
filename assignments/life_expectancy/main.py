@@ -1,4 +1,4 @@
-"""Main Module."""
+"""Main Module"""
 
 # import libraries
 import argparse
@@ -6,7 +6,6 @@ import argparse
 from load_data import load_data
 from cleaning import clean_data
 from save_data import save_data
-
 
 
 def main(i_path, region, o_path): # pragma: no cover

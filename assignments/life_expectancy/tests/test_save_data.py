@@ -9,7 +9,7 @@ from . import OUTPUT_DIR
 def test_save_data(eu_life_expectancy_expected: DataFrame) -> None:
     """
     Test save_data module with mock
-    :param eu_life_expectancy_expected: Input DataFrame to be saved
+    :param eu_life_expectancy_expected: Input DataFrame to be saved.
     """
     with patch("pandas.DataFrame.to_csv") as to_csv_mock:
         to_csv_mock.side_effect = print(f"\nProcess Finished! \
