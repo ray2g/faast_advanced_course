@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 
 from pandas import DataFrame
-from life_expectancy.regions_enum import Region
+from life_expectancy.regions import Region
 
 
 def clean_data(df: DataFrame, region: Region) -> DataFrame:

@@ -3,7 +3,7 @@
 
 import pandas as pd
 from life_expectancy.cleaning import clean_data
-from life_expectancy.regions_enum import Region
+from life_expectancy.regions import Region
 from pandas import DataFrame
 
 

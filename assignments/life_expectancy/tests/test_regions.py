@@ -1,6 +1,7 @@
 """Tests the Region Enum Module"""
 # %%
-from life_expectancy.regions_enum import Region
+from typing import List
+from life_expectancy.regions import Region
 
 
 def test_valid_regions(expected_regions) -> None:
@@ -11,7 +12,7 @@ def test_valid_regions(expected_regions) -> None:
     :param expected_regions: Fixture which is a list of valid regions.
     """
 
-    regions = Region.considered_regions()
+    regions : List = Region.considered_regions()
 
     # Check if both lists of regions have the same number of elements
     assert len(regions) == len(expected_regions)

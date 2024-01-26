@@ -6,7 +6,7 @@ import argparse
 from load_data import load_data
 from cleaning import clean_data
 from save_data import save_data
-from regions_enum import Region
+from regions import Region
 
 def main(i_path, region, o_path): # pragma: no cover
     """
