@@ -18,4 +18,4 @@ def test_valid_regions(expected_regions) -> None:
     assert len(regions) == len(expected_regions)
     
     # Check if both lists of regions have the same elements
-    assert not set(regions) ^ set(expected_regions)
+    assert set(regions) == set(expected_regions)
