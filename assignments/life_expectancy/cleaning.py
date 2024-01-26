@@ -5,9 +5,10 @@ import numpy as np
 import pandas as pd
 
 from pandas import DataFrame
+from life_expectancy.regions import Region
 
 
-def clean_data(df: DataFrame, region: str) -> DataFrame:
+def clean_data(df: DataFrame, region: Region) -> DataFrame:
     '''
     Function which cleans a DataFrame by:
 
@@ -52,6 +53,6 @@ def clean_data(df: DataFrame, region: str) -> DataFrame:
     df_clean = df_unpivot.dropna()
 
     # filter dataframe by desire region
-    df_clean_filt = df_clean[df_clean['region'] == region]
+    df_clean_filt = df_clean[df_clean['region'] == region.value]
 
     return df_clean_filt

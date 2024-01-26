@@ -1,6 +1,6 @@
 """Test for the save_data module"""
 
-import pandas
+
 from pandas import DataFrame
 from life_expectancy.save_data import save_data
 from unittest.mock import patch
