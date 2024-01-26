@@ -56,5 +56,3 @@ def clean_data(df: DataFrame, region: Region) -> DataFrame:
     df_clean_filt = df_clean[df_clean['region'] == region.value]
 
     return df_clean_filt
-
-
