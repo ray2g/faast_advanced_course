@@ -28,3 +28,14 @@ def pt_life_expectancy_expected() -> pd.DataFrame:
 def eu_life_expectancy_tsv():
     """tsv file path."""
     return f"{FIXTURES_DIR}/eu_life_expectancy_raw.tsv"
+
+@pytest.fixture(scope="session")
+def expected_regions() -> DataFrame:
+    """Fixture that defines the expected regions
+       to be considered by the region filter.
+    """
+    return [
+    'AT','FI','ES','EL','EE','DK','DE','CZ','CY','CH','BG','BE','FX','SK','SI',\
+    'SE','RO','PT','PL','NO','NL','LU','LT','IT','UK','IS','HU','IE','MT','MK','LI',\
+    'FR','RS','HR','LV','UA','TR','ME','AL','AZ','GE','BY','AM','MD','SM','RU','XK'
+    ]
