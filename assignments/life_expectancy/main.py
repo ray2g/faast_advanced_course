@@ -47,7 +47,7 @@ if __name__ == "__main__":  # pragma: no cover
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', help= "Input file path.", required=True) 
     parser.add_argument('-o', help = "Output file path.", required=True)
-    parser.add_argument("-r",  type = Region, choices = list(Region), \
+    parser.add_argument("-r",  type = Region, choices = Region, \
                         default= Region.PT, help = "Desire region to filter the csv.")
     args = parser.parse_args()
         
