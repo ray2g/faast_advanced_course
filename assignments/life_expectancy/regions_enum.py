@@ -91,7 +91,7 @@ class Region(Enum):
         ]
 
         # List of valid regions
-        valid = [region.value for region in Region if region.value not in invalid]
+        valid = [region.value for region in cls if region not in invalid]
 
         return valid
 
