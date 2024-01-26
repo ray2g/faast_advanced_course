@@ -45,17 +45,11 @@ if __name__ == "__main__":  # pragma: no cover
 
     # config argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('-i', help= "Input file path.") 
-    parser.add_argument('-o', help = "Output file path.")
+    parser.add_argument('-i', help= "Input file path.", required=True) 
+    parser.add_argument('-o', help = "Output file path.", required=True)
     parser.add_argument("-r",  type = Region, choices = list(Region), \
                         default= Region.PT, help = "Desire region to filter the csv.")
     args = parser.parse_args()
-
-    # Check if all required arguments are provided
-    required_args = ["i", "o"]
-    for arg in required_args:
-        if arg not in args:
-            raise ValueError(f"Missing argument: '{arg}'")
         
     main(args.i, args.r, args.o)       
 # %%
