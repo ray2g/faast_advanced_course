@@ -56,3 +56,28 @@ def clean_data(df: DataFrame, region: Region) -> DataFrame:
     df_clean_filt = df_clean[df_clean['region'] == region.value]
 
     return df_clean_filt
+
+def clean_data_json(df: DataFrame, region: Region) -> DataFrame:
+    """
+    Functions which cleans a DataFrame created from life expectancy json file by:
+
+        - Renaming country and life_expetancy columns.
+        - Dropping flag and flag_detail columns.
+        - Filtering the DataFrame by region.
+    
+    Args:
+        - df: DataFrame: Loaded json file as Pandas DataFrame.
+        - region: Enum which will filter the DataFrame by region.
+    Returns:
+        - df_filt: DataFrame: Cleaned Pandas DataFrame.
+    """
+
+    print("\nCleaning json data...")
+
+    df_rename = df.rename(columns={"country":"region", "life_expectancy":"value"})
+
+    df_clean = df_rename.drop(columns=["flag", "flag_detail"])
+
+    df_filt = df_clean[df_clean['region'] == region.value]
+
+    return df_filt
