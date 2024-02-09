@@ -21,7 +21,7 @@ class Strategy(ABC):
         pass
 
     @abstractmethod
-    def cleaner(self, df: DataFrame, region_filter: Union[str, Enum]):
+    def cleaner(self, df: DataFrame, region_filter: Enum):
         pass
 
     @abstractmethod
@@ -36,7 +36,7 @@ class ConcreteTsvStrategy(Strategy):
     def loader(self, path) -> DataFrame:
         return load_data(input_path=path)
     
-    def cleaner(self, df: DataFrame, region_filter: Union[str, Enum]) -> DataFrame:
+    def cleaner(self, df: DataFrame, region_filter: Enum) -> DataFrame:
         return clean_data(df, region=region_filter)
         
     def saver(self, df: DataFrame, path: Union[str, Path]) -> None:
@@ -46,7 +46,7 @@ class ConcreteJsonStrategy(Strategy):
     def loader(self, path) -> DataFrame:
         return load_json(input_path=path)
     
-    def cleaner(self, df: DataFrame, region_filter: Union[str, Enum]) -> DataFrame:
+    def cleaner(self, df: DataFrame, region_filter: Enum) -> DataFrame:
         return clean_data_json(df, region=region_filter)
         
     def saver(self, df: DataFrame, path: Union[str, Path]) -> None:
@@ -58,19 +58,17 @@ class Context():
     It defines the interface for the defined strategies.
     """
 
-    def __init__(self, strategy: Strategy) -> None:
+    def __init__(self) -> None:
         """Init Context object."""
+        self._strategy = Strategy
+
+    def set_strategy(self, strategy: Strategy) -> None:
+        """Allowing the Context to define the strategy object."""
         self._strategy = strategy
 
-    @property
-    def strategy(self) -> Strategy:
-        """Reference the strategy object to the Context."""
+    def get_strategy(self) -> None:
+        """Allowing the Context to get the strategy object."""
         return self._strategy
-    
-    @strategy.setter
-    def strategy(self, strategy: Strategy) -> None:
-        """Allowing the Context to replace the strategy object."""
-        self._strategy = strategy
 
     def data_workflow(
                     self,
