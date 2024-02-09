@@ -14,13 +14,15 @@ def main(i_path, region, o_path): # pragma: no cover
     Main function which selects the appropriated Strategy based
     on the input file type, and runs the data workflow processment.
     """
-    
+
+    # define context interface
+    context = Context()
     # Select Strategy based on file type
     if i_path.lower().endswith('.zip'):
-        context = Context(ConcreteJsonStrategy())
+        context.set_strategy(ConcreteJsonStrategy())
     else:
         # to read tsv file
-        context = Context(ConcreteTsvStrategy())
+        context.set_strategy(ConcreteTsvStrategy())
 
     # Run data processment
     context.data_workflow(i_path, region, o_path)
