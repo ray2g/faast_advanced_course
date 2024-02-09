@@ -1,5 +1,6 @@
 """Tests the Region Enum Module"""
-# %%
+
+
 from typing import List
 from life_expectancy.regions import Region
 
