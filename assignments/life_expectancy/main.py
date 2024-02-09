@@ -19,6 +19,7 @@ def main(i_path, region, o_path): # pragma: no cover
     if i_path.lower().endswith('.zip'):
         context = Context(ConcreteJsonStrategy())
     else:
+        # to read tsv file
         context = Context(ConcreteTsvStrategy())
 
     # Run data processment
