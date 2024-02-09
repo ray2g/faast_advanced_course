@@ -73,7 +73,7 @@ class Context():
     def data_workflow(
                     self,
                     input_path: Union[str, Path],
-                    region: Union[str, Enum],
+                    region: Enum,
                     output_path: Union[str, Path]
                     ) -> None:
         """Steps to load, clean, and save the data."""
