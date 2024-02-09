@@ -6,6 +6,7 @@ from life_expectancy.save_data import save_data
 from unittest.mock import patch
 from . import OUTPUT_DIR
 
+
 def test_save_data(eu_life_expectancy_expected: DataFrame) -> None:
     """
     Test save_data module with mock
