@@ -94,4 +94,3 @@ class Region(Enum):
         valid = [region.value for region in cls if region not in invalid]
 
         return valid
-
